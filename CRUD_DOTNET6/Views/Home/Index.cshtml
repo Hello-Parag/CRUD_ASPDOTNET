@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<CRUD_DOTNET6.Models.ExaminePerson>
+
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>These Are The Entries made in database showing CRUD Operations</h1>
+ 
+    <br><p>All the Entries that is been showing here are seeded in database, the idea for entry of data in the Database is to store a record the People Details who have been acknowldeged this project, you can add your details in order to submit your acknowledgment in CRUD App section of this App. Thankyou for visiting my Project ;)</p>
+
+    <div class="container-fluid">
+        @foreach (var examinePerson in Model)
+        {
+            <div class="card m-3">
+                <div class="card-header">
+                    <h2>@examinePerson.Name</h2>
+                    <h4>Examine People ID: @examinePerson.Id</h4>
+                    <h4>Name: @examinePerson.Name</h4>
+                    <h4>Organization: @examinePerson.Oraganization</h4>
+                    <h4>Contacts: @examinePerson.ContactDetails</h4>
+                    <h4>Feedback: @examinePerson.Feedback</h4>
+                </div>
+                <img class="card-img-top" src="~/images/img_1.jpg">
+            </div>
+        }
+    </div>
+</body>
+</html>
